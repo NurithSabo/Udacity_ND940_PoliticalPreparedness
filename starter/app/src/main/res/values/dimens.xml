@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="smaller_distance">8dp</dimen>
+
+    <!-- TODO: Add necessary dimension values -->
+    <dimen name="default_distance">16dp</dimen>
+    <dimen name="little_distance">5dp</dimen>
+
+</resources>

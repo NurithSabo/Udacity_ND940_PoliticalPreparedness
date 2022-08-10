@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bogi\'s Political Preparedness</string>
+    <string name="ballot_logo">ballot logo</string>
+    <string name="upcoming_elections">Upcoming elections:</string>
+    <string name="saved_elections_header">Saved elections:</string>
+
+    <!-- TODO: Add necessary string values -->
+    <string name="unfollow">Unfollow election</string>
+    <string name="follow">Follow election</string>
+    <string name="location_permission_denied_explanation">You need to grant location permission to use your location.</string>
+    <string name="settings">Settings</string>
+
+</resources>

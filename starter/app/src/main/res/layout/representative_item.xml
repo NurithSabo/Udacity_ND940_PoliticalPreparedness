@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    <variable
+            name="representative"
+            type="com.example.android.politicalpreparedness.representative.model.Representative" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_distance"
+        android:layout_margin="@dimen/smaller_distance"
+        app:cardElevation="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/representative_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/ic_profile"
+                android:layout_margin="@dimen/smaller_distance"
+                app:profileImage="@{representative.official.photoUrl}" />
+
+            <TextView
+                android:id="@+id/representative_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent=".7"
+                android:singleLine="false"
+                android:paddingTop="@dimen/smaller_distance"
+                android:paddingStart="@dimen/default_distance"
+                tools:text = "Representative Title"
+                android:text="@{representative.office.name.toString() }"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/representative_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/representative_name"/>
+            <TextView
+                android:id="@+id/representative_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent=".45"
+                android:paddingBottom="@dimen/little_distance"
+                android:paddingStart="@dimen/default_distance"
+                android:textSize="15sp"
+                tools:text = "representative name"
+                app:layout_constraintTop_toBottomOf="@+id/representative_title"
+                app:layout_constraintStart_toEndOf="@id/representative_image"
+                app:layout_constraintBottom_toTopOf="@id/representative_post"
+                android:text="@{representative.official.name.toString() }"/>
+
+            <TextView
+                android:id="@+id/representative_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/little_distance"
+                android:paddingStart="@dimen/default_distance"
+                android:textSize="12sp"
+                tools:text = "representative's post"
+                app:layout_constraintTop_toBottomOf="@+id/representative_name"
+                app:layout_constraintStart_toEndOf="@id/representative_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@{representative.official.party.toString() }"/>
+            <ImageView
+                android:id="@+id/twitter_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_twitter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="visible"
+                android:layout_margin="@dimen/smaller_distance"/>
+            <ImageView
+                android:id="@+id/fb_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_facebook"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/twitter_icon"
+                android:layout_margin="@dimen/smaller_distance"/>
+            <ImageView
+                android:id="@+id/www_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_www"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fb_icon"
+                android:layout_margin="@dimen/smaller_distance"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
